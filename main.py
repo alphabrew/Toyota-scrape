@@ -158,9 +158,9 @@ for dealer in dealers:
         url=base_url.format(dealer)
         text=requests.get(url).text
         soup= BeautifulSoup(text, 'html5lib')
-        gooddealers.append(dealer)
         prices.append(float(soup.select('.productPriceSpan')[0].text.split()[0][1:]))
         urls.append(url)
+        gooddealers.append(dealer)
     except:
         pass
 
